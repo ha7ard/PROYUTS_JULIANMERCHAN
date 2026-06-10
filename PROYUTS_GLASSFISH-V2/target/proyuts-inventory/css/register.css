@@ -1,0 +1,212 @@
+/* ============================================================
+   PROYUTS Manager — Login
+   ============================================================ */
+
+.login-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: 100vh;
+}
+
+/* ── Panel izquierdo ─────────────────────────────────────────── */
+.login-hero {
+  background: var(--azul-800);
+  padding: 48px 52px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Fondo decorativo */
+.login-hero::before {
+  content: '';
+  position: absolute; inset: 0;
+  background:
+    radial-gradient(circle at 80% 20%, rgba(99,153,34,.18) 0%, transparent 55%),
+    radial-gradient(circle at 10% 90%, rgba(55,138,221,.15) 0%, transparent 50%);
+  pointer-events: none;
+}
+
+.login-hero::after {
+  content: '';
+  position: absolute;
+  width: 340px; height: 340px;
+  border: 1.5px solid rgba(255,255,255,.06);
+  border-radius: 50%;
+  right: -80px; bottom: -80px;
+  pointer-events: none;
+}
+
+/* Logo */
+.hero-logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  position: relative;
+  z-index: 1;
+}
+.logo-box {
+  width: 40px; height: 40px;
+  background: var(--verde-400);
+  border-radius: 10px;
+  display: flex; align-items: center; justify-content: center;
+  font-family: var(--font-display);
+  font-weight: 800; font-size: 16px; color: #fff;
+  flex-shrink: 0;
+}
+.logo-text { line-height: 1.2; }
+.logo-name {
+  font-family: var(--font-display);
+  font-size: 14px; font-weight: 700; color: #fff;
+}
+.logo-sub { font-size: 11px; color: rgba(255,255,255,.4); }
+
+/* Contenido central */
+.hero-body {
+  position: relative; z-index: 1;
+}
+.hero-eyebrow {
+  display: inline-flex; align-items: center; gap: 7px;
+  background: rgba(255,255,255,.07);
+  border: 1px solid rgba(255,255,255,.1);
+  border-radius: 99px;
+  padding: 5px 13px;
+  font-size: 11px; color: rgba(255,255,255,.7);
+  margin-bottom: 22px;
+}
+.hero-eyebrow span { width: 6px; height: 6px; border-radius: 50%; background: var(--verde-200); flex-shrink: 0; }
+.hero-title {
+  font-family: var(--font-display);
+  font-size: 34px; font-weight: 800;
+  color: #fff;
+  line-height: 1.2;
+  margin-bottom: 16px;
+}
+.hero-title em { color: var(--verde-200); font-style: normal; }
+.hero-desc {
+  font-size: 14px; color: rgba(255,255,255,.6);
+  line-height: 1.75;
+  margin-bottom: 28px;
+  max-width: 380px;
+}
+.hero-features { display: flex; flex-direction: column; gap: 12px; }
+.feat-item {
+  display: flex; align-items: center; gap: 11px;
+  font-size: 13px; color: rgba(255,255,255,.75);
+}
+.feat-dot {
+  width: 7px; height: 7px; border-radius: 50%;
+  background: var(--verde-200); flex-shrink: 0;
+}
+
+/* Pie del panel */
+.hero-footer {
+  font-size: 11px; color: rgba(255,255,255,.3);
+  position: relative; z-index: 1;
+}
+
+/* ── Panel derecho ───────────────────────────────────────────── */
+.login-form-panel {
+  background: var(--bg-card);
+  display: flex; align-items: center; justify-content: center;
+  padding: 48px 40px;
+}
+.login-form-inner {
+  width: 100%; max-width: 390px;
+}
+.form-header { margin-bottom: 28px; }
+.form-title {
+  font-family: var(--font-display);
+  font-size: 24px; font-weight: 700;
+  color: var(--txt-primary);
+  margin-bottom: 5px;
+}
+.form-subtitle { font-size: 13px; color: var(--txt-secondary); }
+
+/* Campo contraseña con toggle */
+.input-password-wrap { position: relative; }
+.input-password-wrap .form-input { padding-right: 42px; }
+.btn-toggle-pass {
+  position: absolute; right: 12px; top: 50%; transform: translateY(-50%);
+  background: none; border: none; cursor: pointer;
+  color: var(--txt-muted); padding: 4px;
+  display: flex; align-items: center;
+  transition: color var(--transition);
+}
+.btn-toggle-pass:hover { color: var(--txt-primary); }
+.icon-eye-off { display: none; }
+
+/* Checkbox recordarme */
+.remember-row {
+  display: flex; align-items: center; justify-content: space-between;
+  margin-bottom: 22px;
+}
+.custom-check {
+  display: flex; align-items: center; gap: 8px;
+  font-size: 13px; color: var(--txt-secondary);
+  cursor: pointer; user-select: none;
+}
+.custom-check input[type="checkbox"] { display: none; }
+.check-box {
+  width: 16px; height: 16px;
+  border: 1.5px solid var(--border-med);
+  border-radius: 4px; background: var(--bg-card);
+  display: flex; align-items: center; justify-content: center;
+  transition: var(--transition); flex-shrink: 0;
+}
+.custom-check input:checked + .check-box {
+  background: var(--azul-600); border-color: var(--azul-600);
+}
+.custom-check input:checked + .check-box::after {
+  content: ''; width: 8px; height: 5px;
+  border-left: 2px solid #fff; border-bottom: 2px solid #fff;
+  transform: rotate(-45deg) translateY(-1px);
+}
+.link-forgot { font-size: 12px; color: var(--azul-600); font-weight: 500; }
+.link-forgot:hover { color: var(--azul-800); text-decoration: underline; }
+
+/* Botón submit */
+.btn-submit {
+  width: 100%; padding: 12px;
+  background: var(--azul-600); color: #fff;
+  border: none; border-radius: var(--radius-md);
+  font-family: var(--font-display);
+  font-size: 15px; font-weight: 700;
+  cursor: pointer; transition: var(--transition);
+  letter-spacing: .01em;
+}
+.btn-submit:hover { background: var(--azul-800); transform: translateY(-1px); box-shadow: var(--shadow-sm); }
+.btn-submit:active { transform: translateY(0); }
+
+.divider {
+  display: flex; align-items: center; gap: 10px;
+  margin: 20px 0;
+  color: var(--txt-muted); font-size: 12px;
+}
+.divider::before, .divider::after {
+  content: ''; flex: 1; height: 1px; background: var(--border);
+}
+
+.register-cta {
+  text-align: center; font-size: 13px; color: var(--txt-secondary);
+  margin-top: 18px;
+}
+.register-cta a { color: var(--azul-600); font-weight: 600; }
+.register-cta a:hover { text-decoration: underline; }
+
+/* ── Alertas de error ────────────────────────────────────────── */
+.alert {
+  padding: 10px 14px; border-radius: var(--radius-md);
+  font-size: 13px; margin-bottom: 16px; display: none;
+}
+.alert-error { background: var(--rojo-050); color: var(--rojo-600); border: 1px solid #F7C1C1; }
+.alert-error.visible { display: block; }
+
+/* ── Responsive ──────────────────────────────────────────────── */
+@media (max-width: 768px) {
+  .login-wrapper { grid-template-columns: 1fr; }
+  .login-hero { display: none; }
+  .login-form-panel { padding: 40px 24px; }
+}

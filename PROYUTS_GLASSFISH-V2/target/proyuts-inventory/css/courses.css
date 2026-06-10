@@ -1,0 +1,149 @@
+/* RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+/* LAYOUT */
+body {
+    background: #f4f6f8;
+}
+
+.layout {
+    display: flex;
+    min-height: 100vh;
+}
+
+/* SIDEBAR */
+aside {
+    width: 220px;
+    background: #1b5e20;
+    color: white;
+    padding: 20px;
+}
+
+aside a {
+    display: block;
+    color: white;
+    text-decoration: none;
+    margin-bottom: 15px;
+    font-weight: 500;
+    transition: 0.2s;
+}
+
+aside a:hover {
+    color: #c8e6c9;
+}
+
+/* MAIN */
+main {
+    flex: 1;
+    padding: 30px;
+}
+
+/* TITULOS */
+h1 {
+    margin-bottom: 10px;
+}
+
+p {
+    margin-bottom: 20px;
+    color: #555;
+}
+
+/* CARD FORM */
+.card {
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0px 10px 25px rgba(0,0,0,0.08);
+    margin-bottom: 20px;
+}
+
+/* INPUTS */
+.card input {
+    width: 48%;
+    padding: 10px;
+    margin: 5px 1%;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+}
+
+/* BOTÓN */
+.card button {
+    margin-top: 10px;
+    padding: 10px 15px;
+    background: #2e7d32;
+    border: none;
+    color: white;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.card button:hover {
+    background: #1b5e20;
+}
+
+/* BUSCADOR */
+#courseSearch {
+    width: 100%;
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    margin-bottom: 15px;
+}
+
+/* TABLA */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+/* HEADER TABLA */
+th {
+    background: #2e7d32;
+    color: white;
+    padding: 12px;
+    text-align: left;
+}
+
+/* FILAS */
+td {
+    padding: 12px;
+    border-bottom: 1px solid #eee;
+}
+
+/* BOTONES TABLA */
+td form {
+    display: inline-block;
+}
+
+td button {
+    padding: 6px 10px;
+    margin: 2px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+/* BOTÓN REGISTRARSE */
+td button:first-child {
+    background: #2e7d32;
+    color: white;
+}
+
+/* BOTÓN BAJA */
+td button:last-child {
+    background: #c62828;
+    color: white;
+}
+
+/* HOVER FILAS */
+tr:hover {
+    background: #f1f8e9;
+}
